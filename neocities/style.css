@@ -1,0 +1,58 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-1: #080808;
+}
+
+html {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--background-1);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+}
+
+.caixa {
+  height: 60vh;
+  transition: transform 0.3s ease;
+}
+
+#pic {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.03;
+}
+
+.caixa:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.caixa:hover~#pic {
+  opacity: 0.1;
+}
+
+
+
