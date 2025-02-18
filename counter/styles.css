@@ -1,0 +1,95 @@
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  gap: 32px;
+  background-color: #1C64F2;
+  overflow: hidden;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+#adicionar {
+  border: none;
+  background-color: white;
+  font-family: 'Inter';
+  font-size: 1rem;
+  letter-spacing: -20%;
+  padding: 12px 20px;
+  color: #1a56db;
+  font-weight: 500;
+  border-radius: 32px;
+  transition: all 0.1s ease;
+  box-shadow: 
+  0px 1px 1px hsl(220deg 60% 30% / 0.075),
+  0px 2px 2px hsl(220deg 60% 30% / 0.075),
+  0px 4px 4px hsl(220deg 60% 30% / 0.075),
+  0px 8px 8px hsl(220deg 60% 30% / 0.075),
+  0px 16px 16px hsl(220deg 60% 30% / 0.075)
+}
+
+#reset {
+  border: none;
+  background-color: #3F83F8;
+  font-family: 'Inter';
+  font-size: 1rem;
+  letter-spacing: -20%;
+  padding: 12px 20px;
+  color: white;
+  font-weight: 400;
+  border-radius: 32px;
+  transition: all 0.1s ease;
+  box-shadow: 
+  0px 1px 1px hsl(220deg 60% 30% / 0.075),
+  0px 2px 2px hsl(220deg 60% 30% / 0.075),
+  0px 4px 4px hsl(220deg 60% 30% / 0.075),
+  0px 8px 8px hsl(220deg 60% 30% / 0.075),
+  0px 16px 16px hsl(220deg 60% 30% / 0.075)
+}
+
+#reset:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#adicionar:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#adicionar:active {
+  box-shadow: none;
+  background-color:  rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.display {
+  font-family: 'Inter';
+  letter-spacing: -20%;
+  color: white;
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+#limite {
+  font-family: 'Inter';
+  font-size: 0.8rem;
+  color: white;
+  opacity: 0;  /* Start hidden */
+  transition: opacity 0.2s ease-in-out;
+}
+
+#limite.show {
+  opacity: 1;  /* Fade in when class is added */
+}
+
