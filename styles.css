@@ -1,0 +1,245 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #fefefa;
+}
+
+
+.gallery {
+  width: 680px; 
+  height: 156px;
+  margin: 240px 0px 24px 320px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.top-row img {
+  width: 212px; 
+  height: 164px; 
+  object-fit: cover;
+}
+
+img {
+  object-fit: cover;
+  width: 212px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.4s ease, margin 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+#main {
+  width: 680px;
+  height: 416px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  margin: 4px  320px;
+}
+
+#main:hover {
+  margin: 10px 128px 0px 320px;
+  transform: scale(1.02);
+}
+
+
+
+.project {
+  position: absolute;
+  left: 1020px;
+  top: 240px;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: rgb(247, 238, 243);
+  height: 534px;
+  transition: all 0.4s ease;
+}
+
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8)
+}
+
+.tags {
+  display: flex;
+  column-gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.tag {
+  padding: 4px 12px;
+  background-color: #fad1df;
+  border-radius: 32px;
+  font-size: 0.8rem;
+  color: rgb(95, 95, 95); 
+}
+
+.project p {
+  max-width: 540px;
+  color: rgb(95, 95, 95);
+  line-height: 150%;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: -0.02rem;
+}
+
+p.desc {
+  font-size: 0.8rem;
+  margin-top: 184px;
+  color: rgb(172, 172, 172); 
+}
+
+.p2 {
+  margin-top: 32px;
+}
+
+#toggleFullscreen {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px;
+  background-color: #fad1df;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+#toggleFullscreen:hover {
+  background-color: #f7a8c4;
+}
+
+/* Adjust SVG size */
+#toggleFullscreen svg {
+  width: 24px;
+  height: 24px;
+  color: rgb(95, 95, 95);
+}
+
+/* Fullscreen mode */
+#fullscreenView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+#fullscreenView.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0s linear 0s;
+}
+
+/* Slider container */
+.slider {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Ensure the duplicated image does not cause a black screen */
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+
+.slides img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.slides img {
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.slides img {
+  transition: transform 0.4s ease, width 1s ease, height 1s ease;
+}
+
+/* Exit button */
+#exitFullscreen {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#exitFullscreen svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+#exitFullscreen:hover svg {
+  transform: scale(1.2);
+}
+
+/* Remove hover effect when in fullscreen */
+#fullscreenView img:hover {
+  transform: none;
+  margin: 0;
+  cursor: default;
+}
+
+
+
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.pop {
+  animation: pop 0.3s ease-out;
+}
+
+
